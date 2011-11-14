@@ -1,0 +1,52 @@
+/* Cycle.css
+ **********************************************************************/
+
+/* 	1. Base
+	2. Temporary
+
+ **********************************************************************/
+
+/* 1. Base
+ **********************************************************************/
+
+#cycle {
+	list-style:none;
+	margin:0;
+	position:relative;
+}
+
+#cycle li {
+	width:320px; /* Must set the width of the li's as when we apply absolute positioning the width is 0. */
+	/* Unfortunately, setting width 100% didn't work as it seemed to inherit move pixels! */
+}
+
+.hide {
+	display:none;	
+}
+
+.show {
+	display:block;
+	opacity:0;
+}
+
+.firstElem {
+	position:absolute;
+	top:0;
+}
+
+
+/* 2. Temporary
+ **********************************************************************/
+ 
+.contain {
+	padding-top:50px;
+	padding-bottom:50px;
+}
+
+#cycle li {
+	margin-bottom:20px;	
+}
+
+#cycle div {
+	min-height:300px;	
+}

@@ -70,7 +70,7 @@
 		
 	};
 	
-	// Set your interval:D
+	// This runs only if our count is less than the lis length
 	if (!stopper) {
 		var timer = window.setInterval(run, 3000);
 	}
