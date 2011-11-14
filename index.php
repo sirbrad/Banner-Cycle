@@ -17,6 +17,8 @@
 </head>
 <?php flush(); ?>
 <body>	
-	// Content
+	<div class="contain">
+     hey
+    </div>
 </body>
 </html>
