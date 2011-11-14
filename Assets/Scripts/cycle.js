@@ -8,7 +8,7 @@
 
 (function cycle(global) {
 	var container = document.getElementById('cycle'),
-		lis = container.getElementsByTagName('li')
+		lis = container.getElementsByTagName('li'),
 		len = lis.length,
 		arr = [],
 		stopper = false;
@@ -20,8 +20,8 @@
 	// If count is set to be more or equal to the length of our elements then return the function
 	// as there is no point in doing anything.
 	if (count >= len) {
-		stop = true;
-		return false
+		stopper = true;
+		return false;
 	}
 	
 	// Hide the banners that shouldn't be visible
@@ -41,7 +41,7 @@
 		// Apply class as it's more effecient. This class sets; position:absolute; top:0;
 		firstElem.className = 'firstElem';
 		
-		cloned = firstElem.cloneNode(true)
+		cloned = firstElem.cloneNode(true);
 		
 		
 		
@@ -63,12 +63,12 @@
 		
 		jQuery(firstElem).animate({opacity:0}, 1000, function() {
 			// Remove our element
-			container.removeChild(firstElem)
-			container.appendChild(cloned)
+			container.removeChild(firstElem);
+			container.appendChild(cloned);
 			lis[len-1].className = 'hide';
 		});
 		
-	};
+	}
 	
 	// This runs only if our count is less than the lis length
 	if (!stopper) {

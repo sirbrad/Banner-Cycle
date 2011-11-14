@@ -9,7 +9,6 @@
     <meta charset="utf-8">
     <meta name="author" content="sirBrad" />
     <link type="text/plain" rel="author" href="humans.txt">
-    <link rel="stylesheet" href="Assets/Styles/fonts.css" />
     <link rel="stylesheet" href="Assets/Styles/structure.css" />
     <link rel="stylesheet" href="Assets/Styles/cycle.css" />
     <!--[if IE]>
