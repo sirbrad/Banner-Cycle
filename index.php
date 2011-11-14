@@ -11,6 +11,7 @@
     <link type="text/plain" rel="author" href="humans.txt">
     <link rel="stylesheet" href="Assets/Styles/fonts.css" />
     <link rel="stylesheet" href="Assets/Styles/structure.css" />
+    <link rel="stylesheet" href="Assets/Styles/cycle.css" />
     <!--[if IE]>
     	<link rel="stylesheet" href="Assets/Styles/IE.css" />
     <![endif]-->
@@ -18,7 +19,24 @@
 <?php flush(); ?>
 <body>	
 	<div class="contain">
-     hey
+    	<ul id="cycle">
+        	<li>
+            	<div style="background-color:red;"></div>
+            </li>
+        	<li>
+            	<div style="background-color:blue;"></div>
+            </li>
+        	<li>
+            	<div style="background-color:grey;"></div>
+            </li>
+        	<li>
+            	<div style="background-color:pink;"></div>
+            </li>
+        	<li>
+            	<div style="background-color:green;"></div>
+            </li>
+        </ul>
     </div>
+    <script src="Assets/Scripts/cycle.js"></script>
 </body>
 </html>
