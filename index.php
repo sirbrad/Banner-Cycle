@@ -20,27 +20,6 @@
 <body>	
 	<div class="contain">
     	<ul id="cycle">
-        	<li><img src="Assets/Images/test-1.jpg"></li>
-        	<li><img src="Assets/Images/test-2.jpg"></li>
-        	<li><img src="Assets/Images/test-3.jpg"></li>
-        	<li><img src="Assets/Images/test-2.jpg"></li>
-        	<li><img src="Assets/Images/test-1.jpg"></li>
-        	<li><img src="Assets/Images/test-3.jpg"></li>
-        	<!--<li>
-            	<div style="background-color:red;"></div>
-            </li>
-        	<li>
-            	<div style="background-color:blue;"></div>
-            </li>
-        	<li>
-            	<div style="background-color:grey;"></div>
-            </li>
-        	<li>
-            	<div style="background-color:pink;"></div>
-            </li>
-        	<li>
-            	<div style="background-color:green;"></div>
-            </li>
         	<li>
             	<div style="background-color:red;"></div>
             </li>
@@ -55,7 +34,22 @@
             </li>
         	<li>
             	<div style="background-color:green;"></div>
-            </li>-->
+            </li>
+        	<li>
+            	<div style="background-color:red;"></div>
+            </li>
+        	<li>
+            	<div style="background-color:blue;"></div>
+            </li>
+        	<li>
+            	<div style="background-color:grey;"></div>
+            </li>
+        	<li>
+            	<div style="background-color:pink;"></div>
+            </li>
+        	<li>
+            	<div style="background-color:green;"></div>
+            </li>
         </ul>
     </div>
     <script src="Assets/Scripts/jquery.min.js"></script>
