@@ -37,7 +37,7 @@
 			cloned;
 		
 		// Add exact padding to the container, so nothing jumps
-		container.style.paddingTop = firstElem.clientHeight + 20 +'px';
+		container.style.paddingTop = firstElem.clientHeight + marginBtm +'px';
 		// Apply class as it's more effecient. This class sets; position:absolute; top:0;
 		firstElem.className = 'firstElem';
 		

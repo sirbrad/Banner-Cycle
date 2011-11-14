@@ -52,6 +52,11 @@
         </ul>
     </div>
     <script src="Assets/Scripts/jquery.min.js"></script>
-    <script src="Assets/Scripts/cycle.js"></script>
+    <script src="Assets/Scripts/cycle.jquery.js"></script>
+    <script>
+		$('#cycle').cycle({
+			'count': 2
+		});
+    </script>
 </body>
 </html>

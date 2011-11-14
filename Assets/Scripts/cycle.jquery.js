@@ -3,47 +3,49 @@
 
 
 
-
 (function($){
-	
-	$.fn.cycle = function() {
+	$.fn.cycle = function(options) {
 		
-	var options = {
+	var settings = $.extend({
+			count: 4, // Determine how many banners should be visible
+			marginBtm: 20, // Your li margin bottom. We need this because we set paddingTop to li height + marginTop
+			delay: 3000 // The speed of the function
+		}, options);
 		
-		};
 		
-		
-	var container = document.getElementById('cycle'),
-		lis = container.getElementsByTagName('li'),
+	var lis = this.find('li'),
 		len = lis.length,
 		arr = [],
 		stopper = false;
-	
-	// Determing how many banners we want visible at a given time is simple.
-	var count = 4, // Determine how many banners should be visible
-		marginBtm = 20; // Your li margin bottom. We need this because we set paddingTop to li height + marginTop
-	
+		
 	// If count is set to be more or equal to the length of our elements then return the function
 	// as there is no point in doing anything.
-	if (count >= len) {
+	if (settings.count >= len) {
 		stopper = true;
 		return false;
 	}
 	
 	// Hide the banners that shouldn't be visible
 	while(len--) {
-		if (len > count-1) {
+		if (len > settings.count-1) {
 			lis[len].className = 'hide';
 		}
 	}
+	
+	
 	
 	function run() {
 		var firstElem = lis[0],
 			len = lis.length,
 			cloned;
+			
+			// Add exact padding to the container, so nothing jumps
+		jQuery(this).css('background', 'red')
+		// Apply class as it's more effecient. This class sets; position:absolute; top:0;
+		firstElem.className = 'firstElem';
 		
-		// Add exact padding to the container, so nothing jumps
-		container.style.paddingTop = firstElem.clientHeight + 20 +'px';
+		/*// Add exact padding to the container, so nothing jumps
+		container.style.paddingTop = firstElem.clientHeight + marginBtm +'px';
 		// Apply class as it's more effecient. This class sets; position:absolute; top:0;
 		firstElem.className = 'firstElem';
 		
@@ -72,18 +74,16 @@
 			container.removeChild(firstElem);
 			container.appendChild(cloned);
 			lis[len-1].className = 'hide';
-		});
+		});*/
 		
 	}
 	
 	// This runs only if our count is less than the lis length
 	if (!stopper) {
-		var timer = window.setInterval(run, 3000);
+		var timer = window.setInterval(run, settings.delay);
 	}
 	
-		
-		
-		
-	};
+	
+}
 	
 })(jQuery);

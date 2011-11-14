@@ -16,6 +16,7 @@
 }
 
 #cycle li {
+	margin-bottom:20px;	/* This needs to put into the javascript aswel! */
 	width:320px; /* Must set the width of the li's as when we apply absolute positioning the width is 0. */
 	/* Unfortunately, setting width 100% didn't work as it seemed to inherit move pixels! */
 }
@@ -41,10 +42,6 @@
 .contain {
 	padding-top:50px;
 	padding-bottom:50px;
-}
-
-#cycle li {
-	margin-bottom:20px;	
 }
 
 #cycle div {
