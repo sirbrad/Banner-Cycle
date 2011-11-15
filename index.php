@@ -26,7 +26,7 @@
             	<div style="background-color:blue;"></div>
             </li>
         	<li>
-            	<div style="background-color:grey;"></div>
+            	<div style="background-color:yellow;"></div>
             </li>
         	<li>
             	<div style="background-color:pink;"></div>
@@ -52,11 +52,6 @@
         </ul>
     </div>
     <script src="Assets/Scripts/jquery.min.js"></script>
-    <script src="Assets/Scripts/cycle.jquery.js"></script>
-    <script>
-		$('#cycle').cycle({
-			'count': 2
-		});
-    </script>
+    <script src="Assets/Scripts/cycle.js"></script>
 </body>
 </html>
