@@ -1,8 +1,11 @@
 /* Cycle.js
  **********************************************************************/
 
-/* OBJECTIVE
- * To loop through and rotate a list of banners.
+/*
+ *	Cycling your way through a nice batch of banners
+ *	Github: https://github.com/sirbrad
+ *	Twitter: http://twitter.com/#!/Bradleyfew
+ *	Any questions, hit me up on twitter.
  */
  
 
@@ -32,43 +35,57 @@
 		}
 	}
 	
+	/**
+     * The toCamelCase method takes a hyphenated value and converts it into a camel case equivalent.
+     * e.g. margin-left becomes marginLeft. 
+     * Hyphens are removed, and each word after the first begins with a capital letter.
+     * 
+     * @param hyphenatedValue { String } hyphenated string to be converted
+     * @return result { String } the camel case version of the string argument
+     */
+     var toCamelCase = function(hyphenatedValue) { 
+     
+		 var result = hyphenatedValue.replace(/-\D/g, function(character) { 
+		  return character.charAt(1).toUpperCase(); 
+		 }); 
+		 
+		 return result;
+      
+    };
+    
+    /**
+     * The toHyphens method performs the opposite conversion, taking a camel case string and converting it into a hyphenated one.
+     * e.g. marginLeft becomes margin-left
+     * 
+     * @param camelCaseValue { String } camel cased string to be converted
+     * @return result { String } the hyphenated version of the string argument
+     */
+     var toHyphens = function(camelCaseValue) { 
+     
+		 var result = camelCaseValue.replace(/[A-Z]/g, function(character) { 
+		  return ('-' + character.charAt(0).toLowerCase()); 
+		 });
+		
+		 return result; 
+
+    };
+	
 	// Get Styles of particular attr
 	var getStyle = (function(element) {
 		if (window.getComputedStyle) { 
 			// W3C specific method. Expects a style property with hyphens
 			return function(element, styleName) {
-				return element.ownerDocument.defaultView.getComputedStyle(element, null).getPropertyValue(styleName);    
+				return element.ownerDocument.defaultView.getComputedStyle(element, null).getPropertyValue(toHyphens(styleName));    
 			}
 		} else if (element.currentStyle) { 
 			// Internet Explorer-specific method. Expects style property names in camel case 
 			return function(element, styleName) {
-				return element.currentStyle[styleName];
+				return element.currentStyle[toCamelCase(styleName)];
 			}
 		}
 	}(document.body));
-	
-	// Check for internext explorer, borrowed from @Integralist
-	var isIE = (function() {
-		var undef,
-			v = 3,
-			div = document.createElement('div'),
-			all = div.getElementsByTagName('i');
-	
-		while (
-			div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
-			all[0]
-		);
-	
-		return v > 4 ? v : undef;	
-	}());
 		
-	// IE7/6 needs to be passed a different arg.
-	// So annoying!	
-	if (isIE <= 7) {
-		margBtm = getStyle(lis[0], 'marginBottom')
-	} else {
-		margBtm = getStyle(lis[0], 'margin-bottom')
-	}
+	margBtm = getStyle(lis[0], 'marginBottom');
 	
 	// Get style returns the value with px on the end. So we just grab the number.
 	margBtm = parseInt(margBtm);
@@ -79,7 +96,7 @@
 			cloned;
 		
 		// Add exact padding to the container, so nothing jumps
-		container.style.paddingTop = firstElem.clientHeight + margBtm + 'px';
+		container.style.paddingTop = (firstElem.clientHeight + margBtm) + 'px';
 		// Apply class as it's more effecient. This class sets; position:absolute; top:0;
 		firstElem.className = 'firstElem';
 		
