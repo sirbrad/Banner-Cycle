@@ -116,8 +116,8 @@
 	
 		// Animate the paddingTop of our container
 		jQuery(container).animate({paddingTop:0}, 400);
-		// Animate the opacity of our element
 		
+		// Animate the opacity of our element
 		jQuery(firstElem).animate({opacity:0}, 1000, function() {
 			// Remove our element
 			container.removeChild(firstElem);

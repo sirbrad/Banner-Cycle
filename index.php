@@ -32,29 +32,23 @@
             	<div style="background-color:pink;"></div>
             </li>
         	<li>
-            	<div style="background-color:green;"></div>
-            </li>
-        	<li>
-            	<div style="background-color:red;"></div>
+            	<div style="background-color:yellow;"></div>
             </li>
         	<li>
             	<div style="background-color:blue;"></div>
             </li>
         	<li>
-            	<div style="background-color:grey;"></div>
-            </li>
-        	<li>
-            	<div style="background-color:pink;"></div>
-            </li>
-        	<li>
-            	<div style="background-color:green;"></div>
+            	<div style="background-color:yellow;"></div>
             </li>
         </ul>
     </div>
     <script src="Assets/Scripts/jquery.min.js"></script>
     <script src="Assets/Scripts/cycle.jquery.js"></script>
     <script>
-    	$('#cycle').cycling();
+    	$('#cycle').cycling({
+			count:3,
+			delay:5000
+		});
     </script>
 </body>
 </html>
